@@ -684,7 +684,7 @@ class Client extends EventEmitter {
         }
 
         const newMessage = await this.pupPage.evaluate(async (chatId, message, options, sendSeen) => {
-            const chatWid = window.Store.WidFactory.createWid(chatId);
+            const chatWid = window.mR.findModule('createWid')[0].createWid(chatId);
             const chat = await window.Store.Chat.find(chatWid);
 
 
